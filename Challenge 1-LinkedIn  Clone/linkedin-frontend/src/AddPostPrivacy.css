@@ -1,0 +1,36 @@
+.privacy-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.privacy-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.statement {
+    display: flex;
+    align-items: center;
+}
+
+.statement>* {
+    margin: 0rem 0.5rem;
+}
+
+.back-to-post-content-btn,
+.save-post-privacy-btn {
+    border: solid 0.5px;
+    border-radius: 20px;
+    height: 30px;
+    width: 70px;
+    margin: 0rem 0.5rem;
+    font-weight: 600;
+    background-color: white;
+    padding: auto;
+}
+
+.back-to-post-content-btn {
+    color: blue;
+}

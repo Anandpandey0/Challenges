@@ -3,6 +3,7 @@ import Header from "./Header";
 
 import "./App.css";
 import Sidebar from "./Sidebar";
+import Feed from "./Feed";
 
 function App() {
   return (
@@ -10,10 +11,14 @@ function App() {
       {/* <h1>Linkedin Clone</h1> */}
       {/* Header */}
       <Header />
-      <Sidebar />
       {/* App Body */}
-      {/* feed */}
-      {/* Widgets */}
+      <div className="app-body">
+        <Sidebar />
+        <Feed />
+
+        {/* feed */}
+        {/* Widgets */}
+      </div>
     </div>
   );
 }

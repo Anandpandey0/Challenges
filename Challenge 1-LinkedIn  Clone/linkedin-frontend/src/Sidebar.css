@@ -1,0 +1,245 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.5rem;
+
+    width: 15vw;
+    margin-top: 1rem;
+    color: grey;
+
+
+
+
+
+}
+
+.sidebar-top {
+    border-top: 5px solid #f6b87a;
+    border-bottom: 1px solid lightgrey;
+    border-left: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
+    border-radius: 8px;
+    background-color: white;
+
+}
+
+.sidebar-top-avatar-info {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.sidebar-top-avatar-pic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.sidebar-top-avatar-info>img {
+
+    height: 3rem;
+    width: 100%;
+    object-fit: cover;
+
+
+}
+
+.sidebar-top-avatar {
+    margin-top: -1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: soldi 2px white;
+
+}
+
+.sidebar-top-avatar-profile-info {
+    border-bottom: solid 0.5px lightgrey;
+}
+
+.sidebar-top-avatar-profile-info>* {
+    margin: 0.5rem;
+
+}
+
+.sidebar-top-avatar-profile-name {
+    text-align: center;
+    color: black;
+    font-weight: 500;
+}
+
+.sidebar-top-avatar-profile-name:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.sidebar-top-avatar-profile-summary {
+    text-align: center;
+    font-weight: 300;
+    font-size: smaller;
+
+}
+
+/* .sidebar-top-linkedin-info {
+    width: 100%;
+} */
+
+.sidebar-top-linkedin-info>* {
+    margin: 0.5rem;
+
+
+}
+
+.sidebar-top-linkedin-info :hover,
+.sidebar-premium-features-info:hover {
+    background-color: rgb(232, 231, 231);
+
+}
+
+.profile-views-info,
+.profile-post-imp {
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: 400;
+    font-size: smaller;
+
+}
+
+.profile-views-info>*:hover,
+.profile-post-imp>*:hover,
+.sidebar-premium-features>* {
+    margin: 0rem 0.6rem;
+
+    cursor: pointer;
+
+}
+
+.profile-views-info-count,
+.profile-post-imp-count {
+    color: #10759a;
+    font-weight: 500;
+}
+
+.sidebar-premium-features-info {
+    padding: 5px;
+    border-top: solid 1px lightgrey;
+    border-bottom: solid 1px lightgrey;
+    color: black;
+    font-weight: 500;
+    /* font-size: smaller; */
+    font-size: small;
+
+
+}
+
+
+.sidebar-my-items {
+    padding: 5px;
+    display: flex;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+
+
+
+
+
+}
+
+
+
+.sidebar-my-items:hover {
+    background-color: rgb(232, 231, 231);
+}
+
+.sidebar-my-items>* {
+    margin-right: 0.5rem;
+}
+
+.sidebar-bottom {
+    border: solid 1px lightgrey;
+    font-size: smaller;
+    margin-top: 2rem;
+    border-radius: 8px;
+    background-color: white;
+
+}
+
+
+
+.sidebar-bottom-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.sidebar-bottom-header>* {
+    margin: 0rem 0.6rem;
+
+}
+
+.sidebar-bottom-header-topic {
+    color: black;
+}
+
+.sidebar-bottom-headear-minimize-button {
+    color: #10759a;
+}
+
+.sidebar-bottom-headear-minimize-button:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+    border-radius: 100%;
+}
+
+.sidebar-recentItem {
+    display: flex;
+    align-items: center;
+}
+
+
+.sidebar-recentItem>* {
+    margin: 0rem 1rem;
+}
+
+.recentGroups-body {
+    margin-top: 1rem;
+}
+
+.sidebar-recentGroupItem {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-recentGroupItem>* {
+    margin: 0rem 1rem;
+}
+
+.recentItem-body>*:hover,
+.recentGroupItem-body>*:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+.sidebar-bottom-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar-bottom-group>* {
+    margin: 0rem 0.6rem;
+}
+
+.sidebar-bottom--group-topic {
+    color: #10759a;
+    font-weight: 500;
+}
+
+.sidebar-bottom--group-topic:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}

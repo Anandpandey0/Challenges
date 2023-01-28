@@ -1,0 +1,87 @@
+.post {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px lightgrey;
+    border-radius: 10px;
+    background-color: white;
+    height: fit-content;
+    width: 100%;
+
+
+
+}
+
+.post>* {
+    margin: 0.5rem 0.5rem;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+
+
+
+}
+
+.post-body-content {
+    color: black;
+    margin-left: 0.5rem;
+}
+
+
+.post-info>h5 {
+    color: black;
+
+
+}
+
+.post-info>h5:hover {
+    text-decoration: underline;
+    cursor: pointer;
+
+
+}
+
+.post-info {
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.post-info>* {
+    margin-left: 0.5rem;
+}
+
+.post-description {
+    font-size: x-small;
+}
+
+.post-body {
+    overflow-wrap: anywhere;
+}
+
+.post-image {
+    width: 100%;
+
+}
+
+.post-image>img {
+    object-fit: cover;
+    width: 100%;
+
+}
+
+.post-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.post-buttons>* {
+    height: 100%;
+}
+
+/* .post-buttons>*:hover {
+    background-color: lightgrey;
+} */
