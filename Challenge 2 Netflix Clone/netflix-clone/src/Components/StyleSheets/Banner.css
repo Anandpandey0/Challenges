@@ -1,0 +1,98 @@
+.banner {
+    margin-top: 3.9rem;
+    /* background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/A_black_image.jpg/640px-A_black_image.jpg); */
+    height: 70vh;
+    width: 100vw;
+    object-fit: contain;
+    z-index: 1;
+    color: white;
+    align-items: center;
+
+    /* border: solid 2px green; */
+    background-blend-mode: lighten;
+    display: flex;
+    overflow-x: hidden;
+}
+
+
+
+.banner-contents {
+    width: 40%;
+    height: 80%;
+    /* margin-left: 2rem; */
+    height: 100%;
+
+
+
+}
+
+@media (max-width:768px) {
+    .banner-contents {
+        width: 100%;
+    }
+
+}
+
+.banner-contents>* {
+    margin-left: 2rem;
+
+    margin: 2rem;
+}
+
+.banner-desc {
+    height: fit-content;
+    width: 70%;
+}
+
+.banner-buttons {
+    height: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.banner-buttons>button {
+    width: 6rem;
+    height: 2rem;
+    border-radius: 20rem;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: auto;
+    border: none;
+}
+
+.play-btn {
+    background-color: red;
+}
+
+.play-btn:hover {
+    background-color: rgb(247, 92, 92);
+    transition: all 0.4s;
+}
+
+.add-to-list-btn {
+    background-color: black;
+    margin-left: 0.5rem;
+}
+
+.add-to-list-btn:hover {
+    background-color: rgb(49, 48, 48);
+    transition: all 0.4s;
+
+}
+
+
+
+.banner-image {
+    width: 40%;
+    height: 100%;
+
+}
+
+.banner-image>img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}

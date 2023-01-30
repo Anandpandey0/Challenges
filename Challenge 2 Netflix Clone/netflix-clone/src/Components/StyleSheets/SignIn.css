@@ -1,0 +1,160 @@
+.signIn {
+    position: absolute;
+    top: 15%;
+    left: 30%;
+    z-index: 1;
+    color: white;
+
+    height: 80vh;
+    width: 30vw;
+    margin-left: 2rem;
+    text-align: left;
+    background-color: black;
+}
+
+.signIn>h1 {
+    margin-top: 2rem;
+    font-weight: 500;
+}
+
+.signIn>* {
+    margin-left: 3rem;
+}
+
+.email-field,
+.password-field {
+    margin-top: 2rem;
+    background-color: grey;
+    width: 80%;
+    height: 8%;
+
+
+}
+
+.email-field>*,
+.password-field>* {
+    margin-left: 1rem;
+
+}
+
+.email-field>p {
+    font-size: small;
+    color: lightgrey;
+}
+
+.email-field>input {
+    width: 90%;
+    background-color: inherit;
+    outline: none;
+    border: none;
+    caret-color: white;
+    color: white;
+    font-size: medium;
+
+}
+
+.password-field>input {
+    width: 90%;
+    height: 90%;
+    background-color: inherit;
+    outline: none;
+    border: none;
+    caret-color: white;
+    color: white;
+    font-size: medium;
+
+}
+
+.password-field>input::placeholder {
+    color: lightgrey;
+
+}
+
+.signIn-btn {
+    margin-top: 3rem;
+    width: 80%;
+    height: 8%;
+    background-color: #E50914;
+    color: white;
+    font-size: larger;
+    font-weight: 600;
+    cursor: pointer;
+
+
+}
+
+.login-support-btns {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    color: rgb(181, 181, 181);
+}
+
+.remeber-me-field {
+    display: flex;
+    align-items: center;
+}
+
+.remeber-me-field>span {
+    margin-left: 0.5rem;
+}
+
+.remeber-me-field>input {
+    height: 1rem;
+    width: 1rem;
+    background-color: grey;
+    accent-color: white;
+}
+
+.need-help-link {
+    margin-right: 3rem;
+
+}
+
+.need-help-link :hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.go-to-signup-page-field {
+    margin-top: 4rem;
+    display: flex;
+    font-size: large;
+    color: grey;
+}
+
+.go-to-signup-page-field>span {
+    color: white;
+    text-decoration: none;
+    margin-left: 0.3rem;
+}
+
+.go-to-signup-page-field>span:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media (max-width:768px) {
+    .signIn {
+        width: 100vw;
+        height: 90vh;
+        position: absolute;
+        left: -8%;
+        top: 10%;
+    }
+
+    .signIn>* {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        width: 90%;
+    }
+
+    .need-help-link {
+        margin-right: 0.5rem;
+    }
+
+
+
+
+
+}
