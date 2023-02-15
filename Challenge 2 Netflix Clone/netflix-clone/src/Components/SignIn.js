@@ -1,6 +1,5 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import "./StyleSheets/SignIn.css";
-import Login from "./Login";
 import { auth } from "../firebase";
 
 const SignIn = () => {
@@ -13,9 +12,7 @@ const SignIn = () => {
         emailRef.current.value,
         passwordRef.current.value
       )
-      .then((authUser) => {
-        console.log(authUser);
-      })
+      .then((authUser) => {})
       .catch((error) => {
         alert(error.message);
       });
@@ -28,9 +25,7 @@ const SignIn = () => {
         emailRef.current.value,
         passwordRef.current.value
       )
-      .then((authUser) => {
-        console.log(authUser);
-      })
+      .then((authUser) => {})
       .catch((error) => {
         alert(error.message);
       });
@@ -45,7 +40,7 @@ const SignIn = () => {
           <input type="text" ref={emailRef} />
         </div>
         <div className="password-field">
-          <input type="text" placeholder="Password" ref={passwordRef} />
+          <input type="password" placeholder="Password" ref={passwordRef} />
         </div>
         <button className="signIn-btn" type="submit" onClick={signIn}>
           Sign In
