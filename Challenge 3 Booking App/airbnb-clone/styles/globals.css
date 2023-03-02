@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .middleOne:after {
+        display: block;
+        content: '';
+        border-bottom: solid 5px #fff;
+        transform: scaleX(0);
+        transition: transform 300ms ease-in-out;
+    }
+
+    .middleOne:hover:after {
+        transform: scaleX(1);
+    }
+}
+
+@layer utilities {
+
+    /* Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+}
