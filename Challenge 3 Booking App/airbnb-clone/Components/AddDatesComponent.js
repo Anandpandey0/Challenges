@@ -52,7 +52,7 @@ const AddDatesComponent = () => {
                 ranges={[dateRange]}
                 rangeColors={["#FD5B61"]}
               />
-              <div className="flex p-2 justify-between md:w-[25vw] bg-white">
+              <div className="flex p-2 justify-between md:w-[21.6vw] bg-white">
                 <button
                   className="px-6 rounded-full py-2 bg-red-400"
                   onClick={() => setShow(!show)}
