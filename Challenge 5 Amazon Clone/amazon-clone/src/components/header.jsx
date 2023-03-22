@@ -25,7 +25,8 @@ const Header = () => {
   const router = useRouter();
 
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { userDetails, setUserDetails, cartItems } = useContext(UserContext);
+  const { userDetails, setUserDetails, filteredCartItems } =
+    useContext(UserContext);
   const signOutHandler = () => {
     if (userDetails) {
       localStorage.removeItem("userInfo");
@@ -134,7 +135,7 @@ const Header = () => {
               {" "}
               <ShoppingCartIcon className="h-8 lg:h-10" />
               <div className="   lg:flex items-end font-semibold bg-yellow-400 rounded-full px-2 text-black ">
-                {cartItems ? cartItems.length : "cart"}
+                {filteredCartItems ? filteredCartItems.length : "cart"}
               </div>{" "}
             </button>
           </div>

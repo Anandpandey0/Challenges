@@ -11,6 +11,7 @@ export const UserProvider = ({ children }) => {
     }
   }, []);
   const [cartItems, setCartItems] = useState([]);
+  const filteredCartItems = cartItems.filter((item) => item.quantity > 0);
 
   return (
     <UserContext.Provider
@@ -19,6 +20,7 @@ export const UserProvider = ({ children }) => {
         setUserDetails,
         cartItems,
         setCartItems,
+        filteredCartItems,
       }}
     >
       {children}

@@ -17,6 +17,7 @@ const Cart = () => {
       router.push("/signin");
     }
   }, []);
+  const filteredCartItems = cartItems.filter((item) => item.quantity > 0);
 
   const calculateTotalPrice = () => {
     let totalPrice = 0;
@@ -39,8 +40,9 @@ const Cart = () => {
           {/* {console.log(cartItems)} */}
           <h1 className="m-4 text-3xl font-semibold">Shopping Cart </h1>
 
-          {cartItems.map((item) => (
+          {filteredCartItems.map((item) => (
             <>
+              {item.quantity > 0 && <></>}
               <div
                 key={item.title}
                 className="flex justify-between w-full h-[20vh] mt-8 "
