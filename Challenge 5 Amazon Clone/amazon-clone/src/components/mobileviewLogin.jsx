@@ -5,7 +5,7 @@ import logo from "../images/nav-logo.png";
 import registerUser from "../../utils/registerUser";
 
 import { useRouter } from "next/router";
-import searchuser from "../../utils/searchuser";
+import searchuser from "../../utils/searchUser";
 import { UserContext } from "../../context/userContext";
 
 import { useContext, useEffect } from "react";
