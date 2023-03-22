@@ -45,7 +45,7 @@ const Cart = () => {
     <div className="bg-gray-300">
       <Header />
       {/* {console.log(cartItems)} */}
-      <div className="flex w-full">
+      <div className="flex w-full flex-col lg:flex-row">
         <div className="w-2/3  h-fit border-1 border-gray-200 bg-white mt-8 ml-4 p-8 ">
           {/* {console.log(cartItems)} */}
           <h1 className="m-4 text-3xl font-semibold">Shopping Cart </h1>
