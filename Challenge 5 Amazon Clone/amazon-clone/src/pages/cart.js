@@ -8,16 +8,17 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useContext, useEffect } from "react";
 import { UserContext } from "../../context/userContext";
+import handleAddToCart from "../../utils/addItemsToCart";
 
 const Cart = () => {
   const router = useRouter();
-  const { cartItems, userDetails } = useContext(UserContext);
+  const { cartItems, userDetails, filteredCartItems, setCartItems } =
+    useContext(UserContext);
   useEffect(() => {
     if (!userDetails) {
       router.push("/signin");
     }
   }, []);
-  const filteredCartItems = cartItems.filter((item) => item.quantity > 0);
 
   const calculateTotalPrice = () => {
     let totalPrice = 0;
@@ -31,6 +32,15 @@ const Cart = () => {
   };
   const totalPrice = calculateTotalPrice();
 
+  const orderHandler = async () => {
+    const userEmail = userDetails.email;
+    await handleAddToCart(userEmail, filteredCartItems);
+    // console.log(data);
+    setCartItems([]);
+    router.push("/orders");
+    // console.log(data);
+  };
+
   return (
     <div className="bg-gray-300">
       <Header />
@@ -42,7 +52,6 @@ const Cart = () => {
 
           {filteredCartItems.map((item) => (
             <>
-              {item.quantity > 0 && <></>}
               <div
                 key={item.title}
                 className="flex justify-between w-full h-[20vh] mt-8 "
@@ -90,7 +99,10 @@ const Cart = () => {
             Subtotal ({cartItems.length} item) Total Price :{" "}
             <span className="font-bold"> `&#8377;` {totalPrice}</span>
           </div>
-          <button className="bg-yellow-400 p-1 text-sm font-semibold mt-2 rounded-xl w-full">
+          <button
+            className="bg-yellow-400 p-1 text-sm font-semibold mt-2 rounded-xl w-full"
+            onClick={orderHandler}
+          >
             Proceed to Buy
           </button>
         </div>

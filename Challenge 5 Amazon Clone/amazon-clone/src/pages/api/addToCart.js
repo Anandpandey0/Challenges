@@ -8,7 +8,7 @@ export default async function addToCart(req, res) {
     await dbConnect();
     const existingCart = await Cart.findOne({ userEmail });
     if (existingCart) {
-      existingCart.cartItems = cartItems;
+      existingCart.cartItems = existingCart.cartItems.concat(cartItems);
       await existingCart.save();
       res.status(200).json({ cartItems: existingCart.cartItems });
     } else {

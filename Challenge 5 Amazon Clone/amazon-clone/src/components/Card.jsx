@@ -7,7 +7,6 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../context/userContext";
-import handleAddToCart from "../../utils/addItemsToCart";
 
 const Card = ({
   image,
@@ -18,11 +17,9 @@ const Card = ({
   productDetails,
 }) => {
   const router = useRouter();
-  const { userDetails, cartItems, setCartItems } = useContext(UserContext);
-  const [sessionCartItems, setSessionCartItems] = useState([]);
+  const { cartItems, setCartItems } = useContext(UserContext);
 
   async function addToCart(product, quantityToAdd = 1) {
-    const userEmail = userDetails.email;
     const index = cartItems.findIndex((item) => item.id === product.id);
     if (index === -1) {
       const updatedCartItems = [
@@ -30,10 +27,7 @@ const Card = ({
         { ...product, quantity: quantityToAdd },
       ];
 
-      const data = await handleAddToCart(userEmail, updatedCartItems);
-      localStorage.setItem("cartItemsInfo", JSON.stringify(data.cartItems));
-      const cartItemsInfo = localStorage.getItem("cartItemsInfo");
-      setSessionCartItems(JSON.parse(cartItemsInfo));
+      // const data = await handleAddToCart(userEmail, updatedCartItems);
 
       setCartItems(updatedCartItems);
     } else {
@@ -43,10 +37,9 @@ const Card = ({
       // existingCartItems.push(updatedCartItems);
       // localStorage.setItem("cartItems", JSON.stringify(existingCartItems));
 
-      const data = await handleAddToCart(userEmail, updatedCartItems);
-      localStorage.setItem("cartItemsInfo", JSON.stringify(data.cartItems));
-      const cartItemsInfo = localStorage.getItem("cartItemsInfo");
-      setSessionCartItems(JSON.parse(cartItemsInfo));
+      // const data = await handleAddToCart(userEmail, updatedCartItems);
+      // localStorage.setItem("cartItemsInfo", JSON.stringify(data.cartItems));
+
       setCartItems(updatedCartItems);
     }
   }

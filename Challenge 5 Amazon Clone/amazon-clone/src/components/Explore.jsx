@@ -17,11 +17,12 @@ const Explore = () => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
+    // console.log(res.json);
   }, []);
 
   return (
     <div className=" grid grid-cols-1   lg:grid-cols-3 h-fit    absolute top-[30rem] lg:top-[25rem] w-[90%] gap-4 gap-y-16  mx-4  lg:mx-14">
-      {/* {console.log(cartItems)} */}
+      {/* {console.log(products)} */}
 
       {products.map((product) => (
         <Card

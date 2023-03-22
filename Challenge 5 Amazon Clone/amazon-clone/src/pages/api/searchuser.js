@@ -9,7 +9,7 @@ export default async function searchuser(req, res) {
   const { email } = req.body;
 
   await connectDb();
-  console.log("Connected");
+  // console.log("Connected");
 
   try {
     const user = await User.findOne({ email });
