@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 
 import signInLogo from "../images/signin-logo.png";
 import { ChevronRightIcon } from "@heroicons/react/solid";
-import searchuser from "../../utils/searchuser";
+import searchuser from "../../utils/searchUser";
 import { useContext, useEffect, useState } from "react";
 
 import loginUser from "../../utils/loginUser";

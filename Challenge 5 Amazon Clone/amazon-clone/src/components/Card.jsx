@@ -19,7 +19,7 @@ const Card = ({
 }) => {
   const router = useRouter();
   const { userDetails, cartItems, setCartItems } = useContext(UserContext);
-  const [sessionCartItems, setSessionCartItems] = useState([]);
+  // const [sessionCartItems, setSessionCartItems] = useState([]);
 
   async function addToCart(product, quantityToAdd = 1) {
     const userEmail = userDetails.email;
