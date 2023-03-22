@@ -27,6 +27,7 @@ const Explore = () => {
         <Card
           key={product.id}
           id={product.id}
+          productDetails={product}
           image={product.image}
           rating={product.rating.rate}
           rateCount={product.rating.count}
@@ -34,7 +35,7 @@ const Explore = () => {
           title={product.title}
         />
       ))}
-      {console.log(cartItems)}
+      {/* {console.log(cartItems)} */}
     </div>
   );
 };

@@ -10,9 +10,7 @@ export default async function addToCart(req, res) {
     if (existingCart) {
       existingCart.cartItems = cartItems;
       await existingCart.save();
-      res
-        .status(200)
-        .json({ success: true, message: "Cart updated successfully!" });
+      res.status(200).json({ cartItems: existingCart.cartItems });
     } else {
       const newCart = new Cart({ userEmail, cartItems });
       await newCart.save();

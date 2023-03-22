@@ -11,8 +11,8 @@ export default async function searchuser(req, res) {
   let user = await User.findOne({ email });
   const bytes = CryptoJS.AES.decrypt(user.password, "akoaskoasdkokopkaskasopk");
   const originalPassword = bytes.toString(CryptoJS.enc.Utf8);
-  console.log(originalPassword);
-  console.log(req.body.password);
+  // console.log(originalPassword);
+  // console.log(req.body.password);
 
   console.log("Connected");
 
