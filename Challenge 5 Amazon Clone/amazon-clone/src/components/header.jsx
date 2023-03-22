@@ -70,8 +70,8 @@ const Header = () => {
                 <option value="electronics">Electronics</option>
                 <option value="jewelery">Jewelery</option>
 
-                <option value="men's clothing">Men's clothing</option>
-                <option value="women's clothing">Women's clothing</option>
+                <option value="men's clothing">Men clothing</option>
+                <option value="women's clothing">Women clothing</option>
               </select>
             </div>
             <div className=" lg:w-[86%]  ">
@@ -167,8 +167,8 @@ const Header = () => {
                     Top Categories for you
                   </div>
                   <div className="text-lg font-semibold">Electronics</div>
-                  <div className="text-lg font-semibold">Men's Clothing</div>
-                  <div className="text-lg font-semibold">Womens's Clothing</div>
+                  <div className="text-lg font-semibold">Men Clothing</div>
+                  <div className="text-lg font-semibold">Womens Clothing</div>
                 </div>
                 {userDetails && (
                   <button onClick={signOutHandler}>Log Out</button>

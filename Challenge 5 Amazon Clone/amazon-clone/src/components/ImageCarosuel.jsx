@@ -28,10 +28,10 @@ const ImageCarosuel = () => {
           Electronics
         </div>
         <div className="ml-4 border-solid border-2 p-2 cursor-pointer border-transparent hover:border-white">
-          Men's Clothing
+          Men Clothing
         </div>
         <div className="ml-4 border-solid border-2 p-2 cursor-pointer border-transparent hover:border-white">
-          Womens's Clothing{" "}
+          Womens Clothing{" "}
         </div>
       </div>
       <div className=" relative z-[-1]">

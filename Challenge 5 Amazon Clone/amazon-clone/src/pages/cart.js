@@ -62,7 +62,7 @@ const Cart = () => {
                   </div>
                 </div>
                 <div className="font-bold">
-                  &#8377; {item.quantity * item.price}
+                  ` &#8377;` {item.quantity * item.price}
                 </div>
               </div>
               <hr className=" mt-2 border-1 boder-solid border-black" />
@@ -72,7 +72,7 @@ const Cart = () => {
           <div className="float-right font-semibold">
             {" "}
             Subtotal ({cartItems.length} item) Total Price :{" "}
-            <span className="font-bold"> &#8377; {totalPrice}</span>
+            <span className="font-bold"> `&#8377;` {totalPrice}</span>
           </div>
         </div>
         <div className="w-1/4  h-fit border-1 border-gray-200 bg-white mt-8 ml-4 p-8 ">
@@ -86,7 +86,7 @@ const Cart = () => {
           <div className=" font-semibold">
             {" "}
             Subtotal ({cartItems.length} item) Total Price :{" "}
-            <span className="font-bold"> &#8377; {totalPrice}</span>
+            <span className="font-bold"> `&#8377;` {totalPrice}</span>
           </div>
           <button className="bg-yellow-400 p-1 text-sm font-semibold mt-2 rounded-xl w-full">
             Proceed to Buy

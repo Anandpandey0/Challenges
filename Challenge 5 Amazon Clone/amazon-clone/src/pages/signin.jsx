@@ -115,7 +115,7 @@ const Login = () => {
           )}
 
           <div className="text-[12px] mt-4">
-            By continuing, you agree to Amazon's{" "}
+            By continuing, you agree to Amazon{" "}
             <span className="text-blue-600 hover:text-orange-400 cursor-pointer hover:underline decoration-solid">
               {" "}
               Conditions of Use
