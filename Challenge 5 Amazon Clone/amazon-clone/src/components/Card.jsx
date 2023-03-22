@@ -63,7 +63,7 @@ const Card = ({
   }
 
   return (
-    <div className="border-black border-2 border-solid  h-[50vh]  lg:w-full lg:h-[85vh] ">
+    <div className="border-black border-2 border-solid  h-[80vh]  lg:w-full lg:h-[85vh] ">
       <div className="h-4/5  relative flex flex-col">
         <Image src={image} alt="Image" fill className="object-fill" />
       </div>
