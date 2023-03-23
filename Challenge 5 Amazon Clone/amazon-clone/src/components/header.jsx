@@ -123,7 +123,10 @@ const Header = () => {
                 Account & Lists{" "}
               </button>
             </div>
-            <div className=" hidden  lg:flex flex-col px-4 py-2 border-solid border-2 border-transparent hover:border-white cursor-pointer">
+            <div
+              className=" hidden  lg:flex flex-col px-4 py-2 border-solid border-2 border-transparent hover:border-white cursor-pointer"
+              onClick={() => router.push("/orders")}
+            >
               <div className="text-sm">Returns </div>
               <div className="font-semibold"> & Orders </div>
             </div>

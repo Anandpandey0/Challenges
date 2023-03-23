@@ -42,11 +42,11 @@ const Cart = () => {
   };
 
   return (
-    <div className="bg-gray-300">
+    <div className="bg-gray-300 h-screen">
       <Header />
       {/* {console.log(cartItems)} */}
-      <div className="flex w-full flex-col lg:flex-row">
-        <div className="w-2/3  h-fit border-1 border-gray-200 bg-white mt-8 ml-4 p-8 ">
+      <div className="flex w-full flex-col-reverse lg:flex-row  ">
+        <div className="lg:w-2/3  h-fit border-1 border-gray-200 bg-white  mt-8 lg:ml-4 p-8 ">
           {/* {console.log(cartItems)} */}
           <h1 className="m-4 text-3xl font-semibold">Shopping Cart </h1>
 
@@ -54,10 +54,10 @@ const Cart = () => {
             <>
               <div
                 key={item.title}
-                className="flex justify-between w-full h-[20vh] mt-8 "
+                className="flex justify-between w-full h-[20vh] mt-8 items-center lg:items-start "
               >
-                <div className="flex w-2/3 h-full   ">
-                  <div className="h-full  w-1/3 relative">
+                <div className="flex w-2/3 h-full  items-center lg:items-start  ">
+                  <div className="h-full lg:w-1/3 w-2/3 relative">
                     <Image
                       src={item.image}
                       alt=""
@@ -66,13 +66,13 @@ const Cart = () => {
                     />
                   </div>
                   <div>
-                    <div>{item.title}</div>
-                    <div className="border-2 border-solid border-gray-400 w-fit px-2">
+                    <div className="ml-2 lg:ml-0">{item.title}</div>
+                    <div className="border-2 border-solid border-gray-400 w-fit px-2 ml-2 lg:ml-0">
                       Qty : {item.quantity}
                     </div>
                   </div>
                 </div>
-                <div className="font-bold">
+                <div className="font-bold ">
                   ` &#8377;` {item.quantity * item.price}
                 </div>
               </div>
@@ -80,13 +80,13 @@ const Cart = () => {
             </>
           ))}
 
-          <div className="float-right font-semibold">
+          <div className="float-right font-semibold hidden lg:block">
             {" "}
             Subtotal ({cartItems.length} item) Total Price :{" "}
             <span className="font-bold"> `&#8377;` {totalPrice}</span>
           </div>
         </div>
-        <div className="w-1/4  h-fit border-1 border-gray-200 bg-white mt-8 ml-4 p-8 ">
+        <div className="lg:w-1/4  h-fit border-1 border-gray-200 bg-white mt-8 lg:ml-4 p-8 ">
           <div className="flex items-center ">
             <CheckCircleIcon className="h-[50px]  text-green-800" />
             <div className="text-xs">
