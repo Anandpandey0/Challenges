@@ -14,7 +14,7 @@ export default async function searchuser(req, res) {
   // console.log(originalPassword);
   // console.log(req.body.password);
 
-  console.log("Connected");
+  // console.log("Connected");
 
   try {
     if (user) {
@@ -31,12 +31,14 @@ export default async function searchuser(req, res) {
       } else {
         res.status(404).json({
           success: false,
+          code: 1,
           message: "Invalid Credentails",
         });
       }
     } else {
       res.status(404).json({
         success: false,
+        code: 2,
         message: "Not found",
       });
     }

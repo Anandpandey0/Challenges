@@ -15,6 +15,8 @@ import { UserContext } from "../../context/userContext";
 
 const Login = () => {
   const { userDetails, setUserDetails } = useContext(UserContext);
+  const [wrongCredentialsAlert, setWrongCredentialsAlert] = useState(false);
+  const [emailNotFoundAlert, setEmailNotFoundAlert] = useState(false);
   const localStorage =
     typeof window !== "undefined" ? window.localStorage : null;
 
@@ -26,8 +28,12 @@ const Login = () => {
   const handleEmailSubmit = async (event) => {
     event.preventDefault();
     const data = await searchuser(email);
-    // console.log(data);
-    setPasswordField(data);
+    console.log(data);
+    if (data != false) {
+      setPasswordField(data);
+    } else {
+      setEmailNotFoundAlert(true);
+    }
   };
   const changeEmailHandler = () => {
     setEmail("");
@@ -38,9 +44,16 @@ const Login = () => {
     const data = await loginUser(email, password);
     // console.log(data);
     // setUserDetails(data);
-    localStorage.setItem("userInfo", JSON.stringify(data));
-    const userInfo = localStorage.getItem("userInfo");
-    setUserDetails(JSON.parse(userInfo));
+    if (data.success === true) {
+      localStorage.setItem("userInfo", JSON.stringify(data));
+      const userInfo = localStorage.getItem("userInfo");
+      setUserDetails(JSON.parse(userInfo));
+    }
+    if (data.success === false) {
+      if (data.code === 1) {
+        setWrongCredentialsAlert(true);
+      }
+    }
     // setUserCookie(data);
     // fetch("https://fakestoreapi.com/products")
     //   .then((res) => res.json())
@@ -55,16 +68,35 @@ const Login = () => {
       router.push("/");
     }
   }, []);
+  useEffect(() => {
+    setEmailNotFoundAlert(false);
+  }, [email]);
+  useEffect(() => {
+    setWrongCredentialsAlert(false);
+  }, [password]);
 
   return (
     <>
-      {userDetails && console.log(userDetails)}
+      {/* {userDetails && console.log(userDetails)}
+      {userDetails && userDetails.code == 1 && <div>Hi</div>} */}
       <div className="hidden flex-col mx-auto w-1/2 lg:w-1/4  h-[100vh] md:flex ">
         <div className="  logo relative h-10 w-1/3 mx-auto py-4  ">
           <Image src={signInLogo} alt="logo" className="object-contain " />
         </div>
         <div className="border-2 border-solid border-gray-300 mt-16 p-2 px-10 py-8 rounded-lg">
           <h1 className="text-xl font-semibold ">Sign In</h1>
+          {wrongCredentialsAlert && (
+            <div className="bg-yellow-300 flex p-2 mt-4">
+              <span className="font-semibold mr-4">Warning:</span>
+              Wrong Credentials
+            </div>
+          )}
+          {emailNotFoundAlert && (
+            <div className="bg-yellow-300 flex p-2 mt-4">
+              <span className="font-semibold">Warning:</span>
+              No email id is registered
+            </div>
+          )}
           {passwordField ? (
             <>
               <div>

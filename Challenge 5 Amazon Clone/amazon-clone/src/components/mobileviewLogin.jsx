@@ -48,7 +48,7 @@ const MobileviewLogin = () => {
   const handleEmailSubmit = async (event) => {
     event.preventDefault();
     const data = await searchuser(email);
-    console.log(data);
+    // console.log(data);
     setPasswordField(data);
     setPassword("");
   };
