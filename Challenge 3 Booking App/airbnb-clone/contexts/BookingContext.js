@@ -7,6 +7,7 @@ export const BookingProvider = ({ children }) => {
   const [checkInDate, setCheckInDate] = useState("");
   const [checkOutDate, setCheckOutDate] = useState("");
   const [guestCount, setGuestCount] = useState("1");
+  const [locationId, setLocationId] = useState("");
 
   return (
     <BookingContext.Provider
@@ -19,6 +20,8 @@ export const BookingProvider = ({ children }) => {
         setCheckInDate,
         guestCount,
         setGuestCount,
+        locationId,
+        setLocationId,
       }}
     >
       {children}

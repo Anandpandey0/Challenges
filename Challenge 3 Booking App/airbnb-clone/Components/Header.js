@@ -12,6 +12,7 @@ import DesktopViewDrawer from "./DesktopViewDrawer";
 import AddDatesComponent from "./AddDatesComponent";
 import { BookingContext } from "../contexts/BookingContext";
 import { useRouter } from "next/router";
+import { searchLocation } from "@/utils/searchLocation";
 
 function Header() {
   const router = useRouter();
@@ -31,6 +32,7 @@ function Header() {
     checkInDate,
     checkOutDate,
     location,
+    setLocationId,
   } = useContext(BookingContext);
   function handleOpenModal() {
     setShowModal(true);
@@ -51,10 +53,39 @@ function Header() {
     const guestCount = e.target.value;
     setGuestCount(guestCount);
   };
+
+  useEffect(() => {
+    async function fetchDestinationId() {
+      const params = { name: location, locale: "en-gb" };
+      if (location !== "") {
+        if (location.length > 3) {
+          const response = await searchLocation(params);
+          console.log(response);
+          if (response.length != 0) {
+            if (response[0].dest_id) {
+              setLocationId(response[0].dest_id);
+              console.log(response[0].dest_id);
+            }
+          }
+        }
+      }
+    }
+    fetchDestinationId();
+  }, [location, setLocationId]);
+  // async function fetchStats() {
+  //   const params = { name: location, locale: "en-gb" };
+
+  //   const response = await searchLocation(params);
+  //   // console.log(response);
+  //   setLocationId(response[0].dest_id);
+  //   // console.log(response[0].dest_id);
+  // }
   const search = () => {
-    router.push({
-      pathname: "/search",
-    });
+    // fetchStats();
+    router.push("/search");
+    // router.push({
+    //   pathname: "/search",
+    // });
   };
 
   return (

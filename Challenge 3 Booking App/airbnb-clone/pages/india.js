@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { searchHotels } from "../utils/bookingAPI";
+import { searchHotels } from "../utils/explore";
 
 export default function India() {
   useEffect(() => {
