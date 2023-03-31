@@ -33,6 +33,8 @@ function Header() {
     checkOutDate,
     location,
     setLocationId,
+    loading,
+    setLoading,
   } = useContext(BookingContext);
   function handleOpenModal() {
     setShowModal(true);
@@ -60,11 +62,11 @@ function Header() {
       if (location !== "") {
         if (location.length > 3) {
           const response = await searchLocation(params);
-          console.log(response);
+          // console.log(response);
           if (response.length != 0) {
             if (response[0].dest_id) {
               setLocationId(response[0].dest_id);
-              console.log(response[0].dest_id);
+              // console.log(response[0].dest_id);
             }
           }
         }
@@ -72,20 +74,11 @@ function Header() {
     }
     fetchDestinationId();
   }, [location, setLocationId]);
-  // async function fetchStats() {
-  //   const params = { name: location, locale: "en-gb" };
 
-  //   const response = await searchLocation(params);
-  //   // console.log(response);
-  //   setLocationId(response[0].dest_id);
-  //   // console.log(response[0].dest_id);
-  // }
   const search = () => {
     // fetchStats();
+
     router.push("/search");
-    // router.push({
-    //   pathname: "/search",
-    // });
   };
 
   return (

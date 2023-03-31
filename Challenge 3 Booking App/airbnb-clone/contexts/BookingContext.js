@@ -21,6 +21,7 @@ export const BookingProvider = ({ children }) => {
         guestCount,
         setGuestCount,
         locationId,
+
         setLocationId,
       }}
     >

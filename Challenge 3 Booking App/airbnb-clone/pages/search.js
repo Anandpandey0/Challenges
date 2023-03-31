@@ -12,7 +12,7 @@ const Search = ({ data }) => {
   const { location, checkInDate, checkOutDate, guestCount, locationId } =
     useContext(BookingContext);
   const [hotelData, setHotelData] = useState([]);
-  const [loading, setLoading] = useState(true);
+
   const [hotelCount, setHotelCount] = useState(0);
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const Search = ({ data }) => {
       if (response.result != undefined) {
         if (response.result.length != 0) {
           setHotelCount(response.result.length);
-          setLoading(false);
+
           setHotelData(response.result);
         }
       }
@@ -57,51 +57,6 @@ const Search = ({ data }) => {
 
         <div className="w-[90%]  mx-auto my-8 ">
           <div className="grid lg:grid-cols-4  grid-flow-row gap-6">
-            {!hotelData && loading && (
-              <>
-                <Stack>
-                  <Skeleton height="100px" />
-                  <Skeleton height="100px" />
-                  <Skeleton height="100px" />
-                </Stack>
-                <Stack>
-                  <Skeleton height="100px" />
-                  <Skeleton height="100px" />
-                  <Skeleton height="100px" />
-                </Stack>
-                <Stack>
-                  <Skeleton height="100px" />
-                  <Skeleton height="100px" />
-                  <Skeleton height="100px" />
-                </Stack>
-                <Stack>
-                  <Skeleton height="100px" />
-                  <Skeleton height="100px" />
-                  <Skeleton height="100px" />
-                </Stack>
-                <Stack>
-                  <Skeleton height="100px" />
-                  <Skeleton height="100px" />
-                  <Skeleton height="100px" />
-                </Stack>
-                <Stack>
-                  <Skeleton height="100px" />
-                  <Skeleton height="100px" />
-                  <Skeleton height="100px" />
-                </Stack>
-                <Stack>
-                  <Skeleton height="100px" />
-                  <Skeleton height="100px" />
-                  <Skeleton height="100px" />
-                </Stack>
-                <Stack>
-                  <Skeleton height="100px" />
-                  <Skeleton height="100px" />
-                  <Skeleton height="100px" />
-                </Stack>
-              </>
-            )}
-
             {hotelData &&
               hotelData.map((hotel) => (
                 <div
