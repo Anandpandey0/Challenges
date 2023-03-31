@@ -45,7 +45,6 @@ const Orders = () => {
     <div className="bg-gray-300">
       <Header />
 
-      {console.log(userDetails)}
       <div className="flex ">
         <div className="w-full lg:w-4/5  h-fit border-1 border-gray-200 bg-white lg:mt-8 lg:ml-4 lg:p-8 ">
           {/* {console.log(cartItems)} */}

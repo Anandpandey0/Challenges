@@ -2,7 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["ecf.bstatic.com"],
+    domains: ["ecf.bstatic.com", "cf.bstatic.com"],
+    // images: {
+    //   domains: ["raw.githubusercontent.com"],
+    // },
+
     remotePatterns: [
       {
         protocol: "https",

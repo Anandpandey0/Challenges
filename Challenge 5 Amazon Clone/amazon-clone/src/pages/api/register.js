@@ -9,7 +9,6 @@ export default async function RegisterUser(req, res) {
   const { name, email, phone } = req.body;
 
   await connectDb();
-  console.log("Connected");
 
   try {
     const user = new User({

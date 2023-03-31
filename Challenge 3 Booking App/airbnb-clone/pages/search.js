@@ -22,6 +22,7 @@ const Search = ({ data }) => {
       <main>
         <h1 className="font-bold ml-10 md:px-10">
           Over 1,000 homes in {location}
+          {console.log(data)}
         </h1>
 
         <div className="w-[90%]  mx-auto my-8 ">
@@ -32,12 +33,11 @@ const Search = ({ data }) => {
                   className=" h-[82vh] lg:h-[60vh]  flex flex-col rounded-t-xl"
                   key={item.hotel_id}
                 >
+                  {console.log(item.max_photo_url)}
                   <div className="relative h-full w-full ">
                     <Image
                       // src={item.max_photo_url}
-                      src={
-                        "https://a0.muscache.com/im/pictures/056ae718-d6cb-4fc2-934b-b158aba85dd8.jpg?im_w=720"
-                      }
+                      src={item.max_photo_url}
                       alt="image"
                       fill
                       className="object-cover rounded-2xl"

@@ -114,7 +114,7 @@ function Header() {
         )}
 
         <div className="hidden md:flex right-nav  justify-end gap-2 items-center  ">
-          <p className="hidden hover:bg-gray-200 p-2 rounded-full md:inline-flex  font-medium cursor-pointer">
+          <p className="hidden hover:bg-gray-200 p-2 rounded-full xl:inline-flex  font-medium cursor-pointer">
             Airbnb your home
           </p>
           <GlobeAltIcon className="h-10 hover:bg-gray-200 rounded-full p-2 text-gray-600  cursor-pointer" />
