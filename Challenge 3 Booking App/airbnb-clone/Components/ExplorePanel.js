@@ -71,7 +71,7 @@ const ExplorePanel = () => {
             </div>
           </div>
         ))}
-        {console.log(hotelData)}
+        {/* {console.log(hotelData)} */}
       </div>
     </div>
   );
