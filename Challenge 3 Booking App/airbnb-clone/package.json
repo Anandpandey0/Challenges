@@ -13,6 +13,7 @@
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@heroicons/react": "^1.0.6",
+    "@vercel/analytics": "^1.0.1",
     "amadeus": "^8.0.0",
     "date-fns": "^2.29.3",
     "dotenv": "^16.0.3",
