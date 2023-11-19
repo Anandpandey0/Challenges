@@ -11,6 +11,11 @@ export default async function RegisterUser(req, res) {
   await connectDb();
 
   try {
+    const existingUser = User.findOne({ email: email });
+    if (existingUser) {
+      console.log("Already registered");
+      return res.status(420).json({ Error: "Already registered" });
+    }
     const user = new User({
       name,
       email,
@@ -21,13 +26,13 @@ export default async function RegisterUser(req, res) {
       phone,
     });
     await user.save();
-    res.status(201).json({
+    return res.status(201).json({
       name: user.name,
       email: user.email,
       phone: user.phone,
       message: "User Created",
     });
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    return res.status(400).json({ message: error.message });
   }
 }

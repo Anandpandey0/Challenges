@@ -6,6 +6,8 @@ import Link from "next/link";
 import registerUser from "../../utils/registerUser";
 // import { LockClosedIcon } from '@heroicons/react/solid';
 import { useRouter } from "next/router";
+// import Toast from "@/components/toast";
+import { useToast } from "@chakra-ui/react";
 
 const Signup = () => {
   const router = useRouter();
@@ -13,6 +15,7 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+  const [showError, setShowError] = useState(false);
 
   const handleNumberInput = (event) => {
     const inputValue = event.target.value;
@@ -20,12 +23,24 @@ const Signup = () => {
     const filteredValue = inputValue.replace(/\D/g, "");
     // limit input to 5 digits
     const maxLengthValue = filteredValue.slice(0, 10);
+    // console.log("Changing");
     setPhone(maxLengthValue);
   };
   const handleSubmit = async (event) => {
+    // console.log("Handle Submit CLicked");
     event.preventDefault();
-    await registerUser(name, email, password, phone);
-    router.push("/");
+    const response = await registerUser(name, email, password, phone);
+    // console.log(response.Error);
+    if (response.Error) {
+      setShowError(true);
+      setEmail("");
+      setName("");
+      setPhone("");
+      setPassword("");
+    }
+    setTimeout(() => {
+      router.push("/signin");
+    }, 2000);
   };
   return (
     <>
@@ -94,6 +109,11 @@ const Signup = () => {
               By creating an account or logging in, you agree to Amazon’s
               Conditions of Use and Privacy Policy.
             </div>
+            {showError && (
+              <div className="text-center border-4 border-solid border-yellow-400 mt-4">
+                User is already registered
+              </div>
+            )}
           </form>
         </div>
       </div>

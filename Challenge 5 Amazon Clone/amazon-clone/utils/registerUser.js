@@ -2,6 +2,7 @@
 
 async function registerUser(name, email, password, phone) {
   // const salt = await bcrypt.genSalt(10);
+  // console.log(name, email, password, phone);
   // const hashedPassword = await bcrypt.hash(password, salt);
   const response = await fetch("/api/register", {
     method: "POST",
@@ -11,7 +12,7 @@ async function registerUser(name, email, password, phone) {
 
   const data = await response.json();
   // console.log(hashedPassword);
-  console.log(data);
+  // console.log(data);
   return data;
 }
 
