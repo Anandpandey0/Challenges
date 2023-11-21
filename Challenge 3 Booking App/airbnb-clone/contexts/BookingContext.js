@@ -4,7 +4,7 @@ export const BookingContext = createContext();
 
 export const BookingProvider = ({ children }) => {
   const [location, setLocation] = useState("");
-  const [checkInDate, setCheckInDate] = useState("");
+  const [checkInDate, setCheckInDate] = useState();
   const [checkOutDate, setCheckOutDate] = useState("");
   const [guestCount, setGuestCount] = useState("1");
   const [locationId, setLocationId] = useState("");

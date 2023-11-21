@@ -1,13 +1,15 @@
 export async function searchLocation(params) {
-  const url = new URL("https://booking-com.p.rapidapi.com/v1/hotels/locations");
+  const url = new URL(
+    "https://booking-com15.p.rapidapi.com/api/v1/hotels/searchDestination"
+  );
 
   url.search = new URLSearchParams(params).toString();
 
   const response = await fetch(url, {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "f23e72a0e7msh8de41fb4d1b5a75p1114c0jsnefad16cc8a1d",
-      "X-RapidAPI-Host": "booking-com.p.rapidapi.com",
+      "X-RapidAPI-Key": "b48b4dc0bdmsh1b77a76cd05a319p1373b6jsne6bf8871c8a4",
+      "X-RapidAPI-Host": "booking-com15.p.rapidapi.com",
     },
   });
 

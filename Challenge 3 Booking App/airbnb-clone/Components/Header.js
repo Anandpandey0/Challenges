@@ -58,15 +58,14 @@ function Header() {
 
   useEffect(() => {
     async function fetchDestinationId() {
-      const params = { name: location, locale: "en-gb" };
+      const params = { query: location };
       if (location !== "") {
         if (location.length > 3) {
           const response = await searchLocation(params);
-          // console.log(response);
-          if (response.length != 0) {
-            if (response[0].dest_id) {
-              setLocationId(response[0].dest_id);
-              // console.log(response[0].dest_id);
+          if (response.data.length != 0) {
+            if (response.data[0].dest_id) {
+              setLocationId(response.data[0].dest_id);
+              // console.log("Header", response.data[0].dest_id);
             }
           }
         }
@@ -76,8 +75,6 @@ function Header() {
   }, [location, setLocationId]);
 
   const search = () => {
-    // fetchStats();
-
     router.push("/search");
   };
 

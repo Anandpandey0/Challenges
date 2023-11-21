@@ -8,19 +8,25 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 const ExplorePanel = () => {
   const [hotelData, setHotelData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const currentTimestamp = Date.now();
+  const currentDate = new Date(currentTimestamp);
+  const nextDayTimestamp = currentTimestamp + 24 * 60 * 60 * 1000;
+  const nextDay = new Date(nextDayTimestamp);
+  const formattedCurrentDate = currentDate.toISOString().split("T")[0];
+  const formattedNextDay = nextDay.toISOString().split("T")[0];
 
   useEffect(() => {
     const params = {
       adults_number: "2",
       dest_id: "-2106102",
       locale: "en-gb",
-      checkin_date: "2023-09-23",
-      filter_by_currency: "AED",
+      checkin_date: formattedCurrentDate,
+      filter_by_currency: "INR",
       room_number: "1",
       order_by: "popularity",
       units: "metric",
       dest_type: "city",
-      checkout_date: "2023-09-24",
+      checkout_date: formattedNextDay,
       include_adjacency: "true",
       children_number: "2",
       categories_filter_ids: "class::2,class::4,free_cancellation::1",
@@ -28,13 +34,16 @@ const ExplorePanel = () => {
       page_number: "0",
     };
     async function fetchStats() {
+      // console.log("Searching");
+
       const response = await searchHotels(params);
+      // console.log(response);
       // console.log(response);
       setLoading(false);
       setHotelData(response.result);
     }
     fetchStats();
-  }, []);
+  }, [formattedCurrentDate, formattedNextDay]);
 
   return (
     <div className="w-[90%]  mx-auto my-8">
