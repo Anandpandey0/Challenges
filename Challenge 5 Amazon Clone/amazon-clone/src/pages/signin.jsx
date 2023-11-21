@@ -67,7 +67,7 @@ const Login = () => {
     if (userDetails) {
       router.push("/");
     }
-  }, []);
+  }, [userDetails, router]);
   useEffect(() => {
     setEmailNotFoundAlert(false);
   }, [email]);
